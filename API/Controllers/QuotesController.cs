@@ -75,5 +75,16 @@ namespace API.Controllers
             await data.SaveChangesAsync();
             return Ok("Данные удалены");
         }
+
+        public void AutoDeteling(Quote quote)
+        {
+            DateTime quoteDate = quote.Date;
+            DateTime limitDate = DateTime.Now.AddMonths(1);
+            if (DateTime.Compare(quoteDate, limitDate) > 0)
+            {
+                data.Quotes.Remove(quote);
+                data.SaveChanges();
+            }
+        }
     }
 }
