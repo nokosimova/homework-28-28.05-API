@@ -53,6 +53,10 @@ namespace API
                 app.UseHsts();
             }
 
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
             app.UseCors("CorsPolicy");
             app.UseMvc();
         }

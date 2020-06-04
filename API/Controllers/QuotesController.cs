@@ -24,7 +24,7 @@ namespace API.Controllers
         {
             if (newQuote == null)
             {
-                ModelState.AddModelError("quoteError", "Добаляемые данные некоррентны!");
+                //ModelState.AddModelError("quoteError", "Добаляемые данные некоррентны!");
                 return BadRequest();
             }
             data.Quotes.Add(newQuote);
