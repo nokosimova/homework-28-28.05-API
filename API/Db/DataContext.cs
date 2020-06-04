@@ -11,6 +11,7 @@ namespace API.Db
     {
         public DataContext(DbContextOptions options) : base(options)
         {
+            Database.EnsureCreated();
         }
         public DbSet<Quote> Quotes { get; set; }
 
